@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import FlashCards from "./FlashCards";
 
-function App() {
+
+class App extends Component {
+  state = {
+    flashCards: [
+      { id: 1,
+         question: "What color is the sky",
+          answer: "Blue"},
+    ],
+    
+  };
+
+render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Flash Cards</h1>
+      <br/>
+      <CardForm />
+      <br/>
+      <FlashCards flashcards={this.state.flashCards} />
     </div>
   );
 }
-
+}
 export default App;
