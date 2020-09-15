@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import FlashCards from "./FlashCards";
+import CardForm from "./CardForm"
 
 
 class App extends Component {
@@ -13,12 +14,21 @@ class App extends Component {
     
   };
 
+
+    addFlashCard = (flashcard) => {
+      console.log(flashcard);
+      const newFlashCard = {...flashcard, id:Math.random() + ""};
+      this.setState({
+        flashCards: [newFlashCard, ...this.state.flashCards]
+      });
+    };
+
 render() {
   return (
     <div>
       <h1>Flash Cards</h1>
       <br/>
-      <CardForm />
+      <CardForm addFlashCard={this.addFlashCard}/>
       <br/>
       <FlashCards flashcards={this.state.flashCards} />
     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 
 const FlashCard =({question, answer}) => (
+  
   <tr>
   <td>{question}</td>
   <td>{answer}</td>
