@@ -1,12 +1,12 @@
 import React from "react";
 
-const FlashCard =({question, answer}) => (
+const FlashCard =({question, answer, id, remove}) => (
   
   <tr>
   <td>{question}</td>
   <td>{answer}</td>
   <td>
-    <button>
+    <button onClick={() => remove(id)}>
       Delete
     </button>
   </td>

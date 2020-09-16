@@ -15,6 +15,15 @@ class App extends Component {
   };
 
 
+  removeCard = (id) => {
+    const flashcards = this.state.flashCards.filter(flashCard => {
+      if (flashCard.id !== id)
+      return flashCard
+    });
+    this.setState({flashCards: [...flashcards],});
+    };
+
+
     addFlashCard = (flashcard) => {
       console.log(flashcard);
       const newFlashCard = {...flashcard, id:Math.random() + ""};
@@ -30,7 +39,7 @@ render() {
       <br/>
       <CardForm addFlashCard={this.addFlashCard}/>
       <br/>
-      <FlashCards flashcards={this.state.flashCards} />
+      <FlashCards flashcards={this.state.flashCards}  remove={this.removeCard}/>
     </div>
   );
 }
