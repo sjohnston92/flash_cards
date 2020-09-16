@@ -1,6 +1,6 @@
 import React from "react";
 
-const FlashCard =({question, answer, id, remove}) => (
+const FlashCard =({question, answer, id, remove, toggle}) => (
   
   <tr>
   <td>{question}</td>
@@ -8,6 +8,11 @@ const FlashCard =({question, answer, id, remove}) => (
   <td>
     <button onClick={() => remove(id)}>
       Delete
+    </button>
+  </td>
+  <td>
+    <button onClick={() => toggle(answer)}>
+      Show Answer
     </button>
   </td>
 </tr> 

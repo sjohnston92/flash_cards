@@ -11,8 +11,16 @@ class App extends Component {
          question: "What color is the sky",
           answer: "Blue"},
     ],
+    showAnswer: true,
     
   };
+
+  toggleAnswer = (answer)=> {
+    const toggle = this.state.showAnswer ? true : false;
+    if (toggle === false)
+    return (answer) === "";
+    }
+  
 
 
   removeCard = (id) => {
@@ -39,7 +47,11 @@ render() {
       <br/>
       <CardForm addFlashCard={this.addFlashCard}/>
       <br/>
-      <FlashCards flashcards={this.state.flashCards}  remove={this.removeCard}/>
+      <FlashCards flashcards={this.state.flashCards}  
+      remove={this.removeCard} toggle={this.toggleAnswer}/>
+        
+    
+
     </div>
   );
 }

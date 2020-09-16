@@ -2,7 +2,7 @@ import React from "react";
 import FlashCard from "./Flashcard";
 
 
-const FlashCards = ({flashcards, remove}) => {
+const FlashCards = ({flashcards, remove, toggle}) => {
   return(
   <table>
     <thead>
@@ -14,7 +14,7 @@ const FlashCards = ({flashcards, remove}) => {
     <tbody>
   {
     flashcards.map((flashcard) => (
-      <FlashCard key={flashcard.id} {...flashcard} remove={remove} />
+      <FlashCard key={flashcard.id} {...flashcard} remove={remove} toggle={toggle}/>
     ))
   }
 </tbody>
